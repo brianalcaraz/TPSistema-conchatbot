@@ -27,6 +27,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Importar enrutadores
+import sheetsRoutes from './routes/sheetsRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import cohorteRoutes from './routes/cohorteRoutes.js';
 import materiaRoutes from './routes/materiaRoutes.js';
@@ -165,6 +166,7 @@ app.use((req, res, next) => {
 });
 
 // Usar enrutadores
+app.use('/api/sheets', sheetsRoutes);
 app.use('/', userRoutes);
 app.use('/', cohorteRoutes);
 app.use('/', alumnoRoutes);
